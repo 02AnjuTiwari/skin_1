@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ColorWear Clothing Store</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .card h2 {
+            color: #6a11cb;
+            margin: 10px 0 5px;
+        }
+
+        .price {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background: #6a11cb;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #4c0fbf;
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>👗 ColorWear Clothing Store 👔</h1>
+    <p>Fashion that pops with color</p>
+</header>
+
+<div class="container">
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" alt="T-Shirt">
+        <h2>T-Shirt</h2>
+        <p class="price">$15</p>
+        <button onclick="addToCart('T-Shirt')">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d" alt="Pant">
+        <h2>Pant</h2>
+        <p class="price">$25</p>
+        <button onclick="addToCart('Pant')">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c" alt="Shirt">
+        <h2>Shirt</h2>
+        <p class="price">$20</p>
+        <button onclick="addToCart('Shirt')">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5" alt="Jacket">
+        <h2>Jacket</h2>
+        <p class="price">$40</p>
+        <button onclick="addToCart('Jacket')">Add to Cart</button>
+    </div>
+</div>
+
+<footer>
+    🛒 Items in Cart: <span id="cartCount">0</span>
+</footer>
+
+<script>
+    let cart = 0;
+
+    function addToCart(item) {
+        cart++;
+        document.getElementById("cartCount").innerText = cart;
+        alert(item + " added to cart!");
+    }
+</script>
+
+</body>
+</html>
